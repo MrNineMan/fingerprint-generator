@@ -22,7 +22,7 @@ import javax.ws.rs.BadRequestException;
 @Controller
 public class FingerprintController {
    //Replace value with your own Secret API Key
-    private static final String FPJS_API_SECRET = "wAVyL8iGS7jAJOnxuaYA";
+    private static final String FPJS_API_SECRET = "Your API Secret";
 
     @Autowired
     EntryService entryService;
