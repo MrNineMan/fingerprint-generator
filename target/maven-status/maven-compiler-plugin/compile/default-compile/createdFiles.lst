@@ -1,0 +1,6 @@
+dev\draft\fingerprintgenerator\FingerprintGeneratorApplication.class
+dev\draft\fingerprintgenerator\EntryRepository.class
+dev\draft\fingerprintgenerator\Entry.class
+dev\draft\fingerprintgenerator\EntryService.class
+dev\draft\fingerprintgenerator\ServletInitializer.class
+dev\draft\fingerprintgenerator\FingerprintController.class
