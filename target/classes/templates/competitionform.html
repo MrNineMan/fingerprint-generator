@@ -13,7 +13,7 @@
     .then(fp => fp.get())
     .then(result => {
         document
-        console.log(result.requestId, result.visitorId);
+        console.log(result.requestId, result.visitorId); //remove for production
         document.getElementById('requestId').value = result.requestId;
         document.getElementById('visitorId').value = result.visitorId;
         })

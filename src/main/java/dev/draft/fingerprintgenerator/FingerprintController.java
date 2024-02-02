@@ -22,7 +22,7 @@ import javax.ws.rs.BadRequestException;
 @Controller
 public class FingerprintController {
    //Replace value with your own Secret API Key
-    private static final String FPJS_API_SECRET = "Your API Secret";
+    private static final String FPJS_API_SECRET = "Your SECRET KEY";
 
     @Autowired
     EntryService entryService;
@@ -40,7 +40,7 @@ public class FingerprintController {
             //Validates the legitimacy of the visitorId
             this.fingerprintValidation(entry);
             //Checks to see if an entry with the same visitorId exists in the table
-            if (entryService.entryExistByID(entry)) {
+            if (!entryService.entryExistByID(entry)) {
                 //Attempts to create a new entry
                 entryService.createEntry(entry);
                 model.addAttribute("title", "Congratulations!");
@@ -92,7 +92,7 @@ public class FingerprintController {
 
 
             //Compares the given visitorId to the visitorId located on the server
-            if (productsResponseIdentificationData.getVisitorId() != entry.getVisitorId()) {
+            if (!productsResponseIdentificationData.getVisitorId().contentEquals(entry.getVisitorId())) {
                 throw new BadRequestException("forged_visitor_id");
             }
 
